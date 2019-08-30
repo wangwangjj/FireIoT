@@ -1,0 +1,21 @@
+<!-- lists.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>报警信息</title>
+</head>
+<body>
+<h2>报警历史</h2>
+<hr>
+<table width=400 border=1 bgcolor='#ccffcc'>
+<tr><td>部件</td><td>状态</td><td>时间</td></tr>
+{% for p in P%}
+	<tr><td>{{p.item}}</td>
+	<td>{{p.status}}</td>
+	<td>{{p.pub_date}}</td></tr>
+{% endfor %}
+</table>
+<a href='/lists'>返回列表</a>
+</body>
+</html>

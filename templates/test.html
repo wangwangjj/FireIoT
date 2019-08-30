@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<div id="myDiv"><h2>test</h2></div>
+<script>
+    $(document).ready(function(){
+        function refresh(){
+	    	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		//console.log('ok');
+		//var test = [];
+	    var test = 	xmlhttp.responseText;
+		var obj = JSON.parse(test);
+		var data1 = obj[0].item;
+		document.getElementById("myDiv").innerHTML=data1;
+		//document.write(test[0]);
+		}
+	}
+	xmlhttp.open("GET","/test/",true);
+	xmlhttp.send();
+		}
+        setInterval(refresh, 3000)
+    })
+</script>
+</html>
