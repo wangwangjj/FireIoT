@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-{% load staticfiles %}
-<div class = 'well'>
-    <img src="{% static "images/index_13.jpg" %}">
-<div>
+  <title>消防报警平台</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>消防报警监控平台</h1>
-
-	<h3>现在时刻: {{now}}</h3>
-</body>
+	<header>
+		物联网平台数据统计
+		<span id=localtime style=" font-size:14px; position: absolute; right: 30px; top:-20px; "></span>
+	</header>
 </html>
+
