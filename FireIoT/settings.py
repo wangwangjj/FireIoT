@@ -82,6 +82,8 @@ DATABASES = {
         'PASSWORD':'962424lgj',
         'HOST':'localhost',
         'PORT':'3306',
+        'CHARSET': 'utf8',
+        'COLLATION': 'utf8_general_ci',
     }
 }
 

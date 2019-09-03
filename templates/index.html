@@ -1,18 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>消防报警平台</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>消防报警云平台</title>
+ 	
+<!-- 新 Bootstrap4 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+ 
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+ 
+<!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+ 
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<header>
-		物联网平台数据统计
-		<span id=localtime style=" font-size:14px; position: absolute; right: 30px; top:-20px; "></span>
-	</header>
-</html>
+    <table class="table table-hove">
+        <thead>
+            <tr class="info"><th>序号</th><th>部件</th><th>状态</th><th>回路号</th><th>地址号</th><th>时间</th></tr>
+        </thead>
+        <tbody>
+            <tr class="warning"><td>1</td><td id="td0_2"></td><td id="td0_3"></td><td id="td0_4"></td><td id="td0_5"></td><td id="td0_6"></td></tr>
+            <tr><td>2</td><td id="td1_2"></td><td id="td1_3"></td><td id="td1_4"></td><td id="td1_5"></td><td id="td1_6"></td></tr>
+            <tr><td>3</td><td id="td2_2"></td><td id="td2_3"></td><td id="td2_4"></td><td id="td2_5"></td><td id="td2_6"></td></tr>
+            <tr><td>4</td><td id="td3_2"></td><td id="td3_3"></td><td id="td3_4"></td><td id="td3_5"></td><td id="td3_6"></td></tr>
+            <tr><td>5</td><td id="td4_2"></td><td id="td4_3"></td><td id="td4_4"></td><td id="td4_5"></td><td id="td4_6"></td></tr>
+            <tr><td>6</td><td id="td5_2"></td><td id="td5_3"></td><td id="td5_4"></td><td id="td5_5"></td><td id="td5_6"></td></tr>
+            <tr><td>7</td><td id="td6_2"></td><td id="td6_3"></td><td id="td6_4"></td><td id="td6_5"></td><td id="td6_6"></td></tr>
+            <tr><td>8</td><td id="td7_2"></td><td id="td7_3"></td><td id="td7_4"></td><td id="td7_5"></td><td id="td7_6"></td></tr>
+            <tr><td>9</td><td id="td8_2"></td><td id="td8_3"></td><td id="td8_4"></td><td id="td8_5"></td><td id="td8_6"></td></tr>
+            <tr><td>10</td><td id="td9_2"></td><td id="td9_3"></td><td id="td9_4"></td><td id="td9_5"></td><td id="td9_6"></td></tr>
+        </tbody>
+    </table>
+</body>
+<script>
+	$(document).ready(function(){
+		function refresh(){
+			var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
 
+	xmlhttp.onreadystatechange=function()
+	{
+		if(xmlhttp.readyState ==4 && xmlhttp.status==200)
+		{
+			var test = xmlhttp.responseText;
+			var obj = JSON.parse(test)
+			
+			document.getElementById("td0_2").innerHTML=obj[0].item;
+			document.getElementById("td0_3").innerHTML=obj[0].state;
+			document.getElementById("td0_4").innerHTML=obj[0].huilu;
+			document.getElementById("td0_5").innerHTML=obj[0].addr;
+			document.getElementById("td0_6").innerHTML=obj[0].pub_date;
+			document.getElementById("td1_2").innerHTML=obj[1].item;
+			document.getElementById("td1_3").innerHTML=obj[1].state;
+			document.getElementById("td1_4").innerHTML=obj[1].huilu;
+			document.getElementById("td1_5").innerHTML=obj[1].addr;
+			document.getElementById("td1_6").innerHTML=obj[1].pub_date;
+			document.getElementById("td2_2").innerHTML=obj[2].item;
+			document.getElementById("td2_3").innerHTML=obj[2].state;
+			document.getElementById("td2_4").innerHTML=obj[2].huilu;
+			document.getElementById("td2_5").innerHTML=obj[2].addr;
+			document.getElementById("td2_6").innerHTML=obj[2].pub_date;
+			document.getElementById("td3_2").innerHTML=obj[3].item;
+			document.getElementById("td3_3").innerHTML=obj[3].state;
+			document.getElementById("td3_4").innerHTML=obj[3].huilu;
+			document.getElementById("td3_5").innerHTML=obj[3].addr;
+			document.getElementById("td3_6").innerHTML=obj[3].pub_date;
+			document.getElementById("td4_2").innerHTML=obj[4].item;
+			document.getElementById("td4_3").innerHTML=obj[4].state;
+			document.getElementById("td4_4").innerHTML=obj[4].huilu;
+			document.getElementById("td4_5").innerHTML=obj[4].addr;
+			document.getElementById("td4_6").innerHTML=obj[4].pub_date;
+			document.getElementById("td5_2").innerHTML=obj[5].item;
+			document.getElementById("td5_3").innerHTML=obj[5].state;
+			document.getElementById("td5_4").innerHTML=obj[5].huilu;
+			document.getElementById("td5_5").innerHTML=obj[5].addr;
+			document.getElementById("td5_6").innerHTML=obj[5].pub_date;
+			document.getElementById("td6_2").innerHTML=obj[6].item;
+			document.getElementById("td6_3").innerHTML=obj[6].state;
+			document.getElementById("td6_4").innerHTML=obj[6].huilu;
+			document.getElementById("td6_5").innerHTML=obj[6].addr;
+			document.getElementById("td6_6").innerHTML=obj[6].pub_date;
+			document.getElementById("td7_2").innerHTML=obj[7].item;
+			document.getElementById("td7_3").innerHTML=obj[7].state;
+			document.getElementById("td7_4").innerHTML=obj[7].huilu;
+			document.getElementById("td7_5").innerHTML=obj[7].addr;
+			document.getElementById("td7_6").innerHTML=obj[7].pub_date;
+			document.getElementById("td8_2").innerHTML=obj[8].item;
+			document.getElementById("td8_3").innerHTML=obj[8].state;
+			document.getElementById("td8_4").innerHTML=obj[8].huilu;
+			document.getElementById("td8_5").innerHTML=obj[8].addr;
+			document.getElementById("td8_6").innerHTML=obj[8].pub_date;
+			document.getElementById("td9_2").innerHTML=obj[9].item;
+			document.getElementById("td9_3").innerHTML=obj[9].state;
+			document.getElementById("td9_4").innerHTML=obj[9].huilu;
+			document.getElementById("td9_5").innerHTML=obj[9].addr;
+			document.getElementById("td9_6").innerHTML=obj[9].pub_date;
+		}
+	}
+	xmlhttp.open("GET","/test",true);
+	xmlhttp.send();
+		}
+		setInterval(refresh,3000)
+	})
+</script>
+		
+</html>

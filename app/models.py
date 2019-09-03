@@ -7,11 +7,10 @@ class Data(models.Model):
     addr = models.CharField(max_length=200)
     item = models.TextField()
     state = models.TextField()
-    pub_date = models.DateTimeField(default=timezone.now)
+    pub_date = models.CharField(max_length=200)
 
     class Meta:
-        ordering = ('-pub_date',)
-        db_table = 'FireData'
+        db_table = 'Data'
 
     def __unicode__(self):
         return self
