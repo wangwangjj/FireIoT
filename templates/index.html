@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>消防报警云平台</title>
- 	
+ 		
 <!-- 新 Bootstrap4 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
  
@@ -17,12 +17,17 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="container">
+		<div class="alert alert-info">
+		<h1 class = text-center> 主机设备信息</h1>
+		</div>
+	</div>
     <table class="table table-hove">
         <thead>
-            <tr class="info"><th>序号</th><th>部件</th><th>状态</th><th>回路号</th><th>地址号</th><th>时间</th></tr>
+            <tr id="class1" class="alert alert-warning"><th>序号</th><th>部件</th><th>状态</th><th>回路号</th><th>地址号</th><th>时间</th></tr>
         </thead>
         <tbody>
-            <tr class="warning"><td>1</td><td id="td0_2"></td><td id="td0_3"></td><td id="td0_4"></td><td id="td0_5"></td><td id="td0_6"></td></tr>
+            <tr class="alert alert-info"><td>1</td><td id="td0_2"></td><td id="td0_3"></td><td id="td0_4"></td><td id="td0_5"></td><td id="td0_6"></td></tr>
             <tr><td>2</td><td id="td1_2"></td><td id="td1_3"></td><td id="td1_4"></td><td id="td1_5"></td><td id="td1_6"></td></tr>
             <tr><td>3</td><td id="td2_2"></td><td id="td2_3"></td><td id="td2_4"></td><td id="td2_5"></td><td id="td2_6"></td></tr>
             <tr><td>4</td><td id="td3_2"></td><td id="td3_3"></td><td id="td3_4"></td><td id="td3_5"></td><td id="td3_6"></td></tr>
@@ -34,8 +39,58 @@
             <tr><td>10</td><td id="td9_2"></td><td id="td9_3"></td><td id="td9_4"></td><td id="td9_5"></td><td id="td9_6"></td></tr>
         </tbody>
     </table>
+   	
+   <a onclick="myclick()" class="btn btn-info" role="button"><h3>                 查岗巡检</h3></a>
+	
+    <div class="container">
+	<div class="alert alert-info">
+	<h2 class = text-center> 用户信息传输装置信息</h2>
+	</div>
+	</div>
+
+	<table class="table table-hove">
+  		<thead>
+			<tr class="alert alert-warning"><th>序号</th><th>状态</th><th>时间</th></tr>
+		</thead>
+		<tbody>
+			<tr class="alert alert-info"><td>1</td><td id="tdd0_2"></td><td id="tdd0_3"></td></tr>
+			<tr><td>2</td><td id="tdd1_2"></td><td id="tdd1_3"></td></tr>
+			<tr><td>3</td><td id="tdd2_2"></td><td id="tdd2_3"></td></tr>
+			<tr><td>4</td><td id="tdd3_2"></td><td id="tdd3_3"></td></tr>
+			<tr><td>5</td><td id="tdd4_2"></td><td id="tdd4_3"></td></tr>
+			<tr><td>6</td><td id="tdd5_2"></td><td id="tdd5_3"></td></tr>
+			<tr><td>7</td><td id="tdd6_2"></td><td id="tdd6_3"></td></tr>
+			<tr><td>8</td><td id="tdd7_2"></td><td id="tdd7_3"></td></tr>
+			<tr><td>9</td><td id="tdd8_2"></td><td id="tdd8_3"></td></tr>
+			<tr><td>10</td><td id="tdd9_2"></td><td id="tdd9_3"></td></tr>
+		</tbody>
+	</table>
 </body>
 <script>
+
+	function myclick(){
+    var httpres;
+ 	if(window.XMLHttpRequest)
+	{
+		httpres = new XMLHttpRequest();
+	}
+	else
+	{
+		httpres = new ActiveObject("Microsoft.XMLHTTP");
+	}
+
+  	httpres.onreadystatechange=function()
+	{
+		if(httpres.readyState ==4 && httpres.status==200)
+	{
+		
+	}	
+	}
+		
+	httpres.open("GET","/check",true);
+    httpres.send();
+}
+////////////////////////////////////////////////////
 	$(document).ready(function(){
 		function refresh(){
 			var xmlhttp;
@@ -55,6 +110,7 @@
 			var test = xmlhttp.responseText;
 			var obj = JSON.parse(test)
 			
+			//console.log(document.getElementById("class1").classname);//="alert alert-danger";
 			document.getElementById("td0_2").innerHTML=obj[0].item;
 			document.getElementById("td0_3").innerHTML=obj[0].state;
 			document.getElementById("td0_4").innerHTML=obj[0].huilu;
@@ -112,6 +168,36 @@
 		}
 		setInterval(refresh,3000)
 	})
+/////////////////////////////////////////////////////////////////////////////
+
+$(document).ready(function(){
+	function refresh1(){
+		var xmlhttp;
+	if(window.XMLHttpRequest)
+	{
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		xmlhttp=new Activeobject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.onreadystatechange=function()
+	{
+		if(xmlhttp.readyState == 4 && xmlhttp.status==200)
+		{
+			var test = xmlhttp.responseText;
+			var obj = JSON.parse(test)
+			document.getElementById("tdd0_2").innerHTML=obj[0].state;
+            document.getElementById("tdd0_3").innerHTML=obj[0].pub_date;	
+		}
+	}
+	xmlhttp.open("GET","/test1",true);
+	xmlhttp.send();
+}
+	setInterval(refresh1,3000)
+	})
+
 </script>
 		
 </html>

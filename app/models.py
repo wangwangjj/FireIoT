@@ -14,3 +14,13 @@ class Data(models.Model):
 
     def __unicode__(self):
         return self
+
+class Data1(models.Model):
+    state = models.TextField()
+    pub_date = models.CharField(max_length=200)
+
+    class Meta:
+        db_table = 'Data1'
+
+    def __unicode__(self):
+        return self

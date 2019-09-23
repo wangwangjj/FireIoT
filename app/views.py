@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.template.loader import get_template
 from django.http import HttpResponse
-from .models import Data
+from .models import Data,Data1
 from datetime import datetime
+import MySQLdb
 
 # Create your views here.
 
@@ -24,6 +25,29 @@ def test(request):
         json_dict["item"] = good.item
         json_dict["state"] = good.state
         json_dict["pub_date"] = good.pub_date
+        json_list.append(json_dict)
+    import json
+    return HttpResponse(json.dumps(json_list),content_type="application/json")
+
+def check(request):
+    db = MySQLdb.connect("localhost","root","962424lgj","CHECK",charset='utf8')
+    cursor = db.cursor()
+    sql="update CheckOnline set STATUS=\"1\";"
+    try:
+        cursor.execute(sql)
+        db.commit()
+    except:
+        db.rollback()
+    db.close()
+    return HttpResponse("ok")
+
+def test1(request):
+    json_list = [];
+    goods = Data1.objects.order_by('-id')
+    for good in goods:
+        json_dict={}
+        json_dict['state'] = good.state
+        json_dict['pub_date'] = good.pub_date
         json_list.append(json_dict)
     import json
     return HttpResponse(json.dumps(json_list),content_type="application/json")

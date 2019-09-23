@@ -1,7 +1,7 @@
 import socketserver
 import MySQLdb
 import struct
-
+import time
 
 
 class Server(socketserver.BaseRequestHandler):
@@ -20,7 +20,26 @@ class Server(socketserver.BaseRequestHandler):
 
     def handle(self):
         while True:
+            #time.sleep(1)
+            sk:socket.socket = self.request
             rec = str(self.request.recv(1024),encoding="utf8").split('|')
+            db1 = MySQLdb.connect("localhost","root","962424lgj","CHECK",charset='utf8')
+            cursor1 = db1.cursor()
+            sql1= "select * from CheckOnline;"
+            sql2= "update CheckOnline set STATUS=\"0\";"
+            cursor1.execute(sql1)
+            
+            for r in cursor1:
+                if r[0] == "1":
+                    print("OK")
+                    try:
+                        cursor1.execute(sql2);
+                        db1.commit()
+                    except:
+                        db1.rollback()                  
+                    sk.send("back".encode("utf-8"))
+
+            db1.close()
             
             mydata= rec[0]
             print(mydata)
