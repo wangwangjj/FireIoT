@@ -3,7 +3,8 @@ from django.utils import timezone
 # Create your models here.
 
 class Data(models.Model):
-    huilu = models.CharField(max_length=200)
+    device = models.TextField(default="未定义")
+    huilu=models.CharField(max_length=200,default=0)
     addr = models.CharField(max_length=200)
     item = models.TextField()
     state = models.TextField()

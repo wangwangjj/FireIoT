@@ -1,0 +1,1023 @@
+nohup: ignoring input
+[223.93.139.186]End server.
+[223.93.139.186]End service.
+[223.93.139.186]End server.
+->client: 40400000010100000000000010270000000000d91c5f211a0800021c01000000000000ef2323
+->msg: 1c01000000000000
+28
+in ok
+machinetype:用户信息传输装置
+item:本机
+addr:
+state:时间上传
+time:200-0-0 0:0:0
+OK
+->client: 40400000010100000000000010270000000000d91c5f211a0800021c01000000000000ef2323
+->msg: 1c01000000000000
+28
+in ok
+machinetype:用户信息传输装置
+item:本机
+addr:
+state:时间上传
+time:200-0-0 0:0:0
+->client: 40400000010100000000000010270000000000d91c5f211a0800021c01000000000000ef2323
+->msg: 1c01000000000000
+28
+in ok
+machinetype:用户信息传输装置
+item:本机
+addr:
+state:时间上传
+time:200-0-0 0:0:0
+->client: 40400000010100000000000010270000000000d91c5f211a0c0002010101016000000002140913ef2323
+->msg: 010101016000000002140913
+1
+in ok
+machinetype:消防主机
+item:本机
+addr:
+state:火警
+time:2019-9-20 2:0:0
+INSERT INTO Data (device,item,addr,state,pub_date) VALUES("消防主机","本机","","火警","2019-9-20 2:0:0");
+execute ok
+close ok
+[223.93.139.186]End service.
+[221.178.124.53]End server.
+->client: 3030303030303030303031
+[221.178.124.53]End service.
+----------------------------------------
+Exception happened during processing of request from ('221.178.124.53', 45295)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45779)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45781)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[223.93.139.186]End server.
+[117.132.197.80]End server.
+[223.93.139.186]End service.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45786)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45788)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45789)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45790)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45791)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45792)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45793)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45794)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45795)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45796)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45797)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45798)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45799)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45800)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45801)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45802)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45803)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45804)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45805)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45806)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45807)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45808)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45809)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45810)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45811)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45812)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45813)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45814)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45815)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45816)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45817)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45818)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 45819)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46006)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 303030303030303030303140400100010127260c18091310270000000000d91c5f211a0a00021801000023260c180913042323
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46007)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 49, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd,msg,checksum,end=struct.unpack("!3H6s6s6s3B"+str(length)+"sHB",data)
+struct.error: unpack requires a buffer of 69 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46008)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46009)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46010)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46011)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46012)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46013)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46014)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46015)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46016)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46017)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46018)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46019)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46020)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46021)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46022)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46023)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46024)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46025)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46027)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46028)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46029)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46030)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------
+[117.132.197.80]End server.
+->client: 3030303030303030303031
+[117.132.197.80]End service.
+----------------------------------------
+Exception happened during processing of request from ('117.132.197.80', 46031)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/local/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "user/serverV11.py", line 16, in __init__
+    self.handle()
+  File "user/serverV11.py", line 47, in handle
+    head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+struct.error: unpack requires a buffer of 27 bytes
+----------------------------------------

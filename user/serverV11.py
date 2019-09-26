@@ -10,12 +10,12 @@ class Server(socketserver.BaseRequestHandler):
         self.client_address = client_address
         self.server = server
         self.database = MySQLdb.connect("localhost","root","962424lgj","test",charset='utf8')
-        print("[" + self.client_address[0]+"]"+"End server.")
+        print("[" + self.client_address[0]+"]"+"connect server.")
 
         try:
             self.handle()
         finally:
-            print("["+self.client_address[0]+"]"+"End service.")
+            print("["+self.client_address[0]+"]"+"close service.")
 
 
     def handle(self):
@@ -23,88 +23,117 @@ class Server(socketserver.BaseRequestHandler):
             #time.sleep(1)
             sk:socket.socket = self.request
             data = self.request.recv(1024)
-            db1 = MySQLdb.connect("localhost","root","962424lgj","CHECK",charset='utf8')
-            cursor1 = db1.cursor()
-            sql1= "select * from CheckOnline;"
-            sql2= "update CheckOnline set STATUS=\"0\";"
-            cursor1.execute(sql1)
             
-            for r in cursor1:
-                if r[0] == "1":
-                    print("OK")
-                    try:
-                        cursor1.execute(sql2);
-                        db1.commit()
-                    except:
-                        db1.rollback()                  
-                    sk.send("back".encode("utf-8"))#发送回复
-            db1.close()
+            #查岗
+            #db1 = MySQLdb.connect("localhost","root","962424lgj","CHECK",charset='utf8')
+            #cursor1 = db1.cursor()
+            #sql1= "select * from CheckOnline;"
+            #sql2= "update CheckOnline set STATUS=\"0\";"
+            #cursor1.execute(sql1)
+            #for r in cursor1:
+                #if r[0] == "1":
+                    #print("OK")
+                    #try:
+                        #cursor1.execute(sql2);
+                        #db1.commit()
+                    #except:
+                        #db1.rollback()                  
+                    #sk.send("back".encode("utf-8"))#发送回复
+            #db1.close()
+            
+            
             if not data: break
             print('->client:', data.hex())
-            head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
-            length=len2*256+len1
-            head,num,vertion,time,n1,n2,len1,len2,cmd,msg,checksum,end=struct.unpack("!3H6s6s6s3B"+str(length)+"sHB",data)
+            tmpdata = data.hex()
+            if((tmpdata[0]=='4') and (tmpdata[1]=='0') and (tmpdata[2]=='4') and (tmpdata[3]=='0')):
+                head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
+                length=len2*256+len1
+                head,num,vertion,time,n1,n2,len1,len2,cmd,msg,checksum,end=struct.unpack("!3H6s6s6s3B"+str(length)+"sHB",data)
+                mydata=msg.hex()
+                print('->msg:', mydata)
+                machinetype = returnmch((int(mydata[0])*16+int(mydata[1],16)))#获得机器类型
+                print(int(mydata[0])*16+int(mydata[1],16))
             
-            mydata=msg.hex()
-            print('->msg:', mydata)
-            machinetype = returnmch((int(mydata[0])*16+int(mydata[1],16)))#获得机器类型
-            print(int(mydata[0])*16+int(mydata[1],16))
-            
-            if((int(mydata[0])*16+int(mydata[1],16)) == 1):#主机状态
-                item = "本机"
-                addr = ""
-                #addr = int(mydata[2])*16+mydata[3]
-                state = ReturnNewState_1(calcullate16bit(mydata[8],mydata[9],mydata[10],mydata[11])) 
-                pub_date = ReturnTime(mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19],mydata[20],mydata[21],mydata[22],mydata[23])
-            elif((int(mydata[0])*16+int(mydata[1],16)) == 2):#部件状态
-                item = ReturnNewItem_2(int(mydata[8])*16+int(mydata[9]))
-                state = ReturnNewState_2(calcullate16bit(mydata[18],mydata[19],mydata[20],mydata[21]))
-                addr = calcullate16bit(mydata[10],mydata[11],mydata[12],mydata[13])
-                pub_date = ReturnTime(mydata[84],mydata[85],mydata[86],mydata[87],mydata[88],mydata[89],mydata[91],mydata[92],mydata[93],mydata[94],mydata[95],mydata[96])
-            elif((int(mydata[0])*16+int(mydata[1],16)) == 4):#操作信息
-                item = "本机"
-                state = ReturnNewState_4(int(mydata[8])*16+int(mydata[9]))
-                addr = ""
-                pub_date = ReturnTime(mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19],mydata[20],mydata[21],mydata[22],mydata[23])
-            elif((int(mydata[0])*16+int(mydata[1],16)) == 21):#部件状态
-                item = "本机"
-                state = ReturnNewState_21(int(mydata[4])*16+int(mydata[5]))
-                addr = ""
-                pub_date = ReturnTime(mydata[6],mydata[7],mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17])
-            elif((int(mydata[0])*16+int(mydata[1],16)) == 21):#用户信息传输装置操作信息
-                item = "本机"
-                state = ReturnNewState_24(int(mydata[4])*16+int(mydata[5]))
-                addr = ""
-                pub_date = ReturnTime(mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19])
-            elif((int(mydata[0])*16+int(mydata[1],16)) == 28):#时间
-                item = "本机"
-                state = "时间上传"
-                addr = ""
-                pub_date = ReturnTime(mydata[4],mydata[5],mydata[6],mydata[7],mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15])
+                if((int(mydata[0])*16+int(mydata[1],16)) == 1):#主机状态
+                    item = "本机"
+                    addr = ""
+                    #addr = int(mydata[2])*16+mydata[3]
+                    state = ReturnNewState_1(calcullate16bit(mydata[8],mydata[9],mydata[10],mydata[11])) 
+                    pub_date = ReturnTime(mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19],mydata[20],mydata[21],mydata[22],mydata[23])
+                elif((int(mydata[0])*16+int(mydata[1],16)) == 2):#部件状态
+                    item = ReturnNewItem_2(int(mydata[8])*16+int(mydata[9]))
+                    state = ReturnNewState_2(calcullate16bit(mydata[18],mydata[19],mydata[20],mydata[21]))
+                    addr = calcullate16bit(mydata[10],mydata[11],mydata[12],mydata[13])
+                    pub_date = ReturnTime(mydata[84],mydata[85],mydata[86],mydata[87],mydata[88],mydata[89],mydata[91],mydata[92],mydata[93],mydata[94],mydata[95],mydata[96])
+                elif((int(mydata[0])*16+int(mydata[1],16)) == 4):#操作信息
+                    item = "本机"
+                    state = ReturnNewState_4(int(mydata[8])*16+int(mydata[9]))
+                    addr = ""
+                    pub_date = ReturnTime(mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19],mydata[20],mydata[21],mydata[22],mydata[23])
+                elif((int(mydata[0])*16+int(mydata[1],16)) == 21):#部件状态
+                    item = "本机"
+                    state = ReturnNewState_21(int(mydata[4])*16+int(mydata[5]))
+                    addr = ""
+                    pub_date = ReturnTime(mydata[6],mydata[7],mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17])
+                elif((int(mydata[0])*16+int(mydata[1],16)) == 24):#用户信息传输装置操作信息
+                    item = "本机"
+                    state = ReturnNewState_24(int(mydata[4])*16+int(mydata[5]))
+                    addr = ""
+                    pub_date = ReturnTime(mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19])
+                elif((int(mydata[0])*16+int(mydata[1],16)) == 28):#时间
+                    item = "本机"
+                    state = "时间上传"
+                    addr = ""
+                    pub_date = ReturnTime(mydata[4],mydata[5],mydata[6],mydata[7],mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15])
+                else:
+                    item = "未定义"
+                    state="未定义"
+                    addr=""
+                    pub_date=time.now()
                 
+                if head == 0x4040:
+                    print("in ok")
+                    print("machinetype:"+machinetype)
+                    print("item:"+item)
+                    print("addr:"+addr)
+                    print("state:"+state)
+                    print("time:"+pub_date)
+                    cmd=3
+                    senddata=struct.pack("!3H6s6s6s3B"+str(length)+"sHB",head,num,vertion,time,n1,n2,len1,len2,cmd,msg,checksum,end)
+                    
+                    
+                    db1 = MySQLdb.connect("localhost","root","962424lgj","CHECK",charset='utf8')
+                    cursor1 = db1.cursor()
+                    sql1= "select * from CheckOnline;"
+                    sql2= "update CheckOnline set STATUS=\"0\";"
+                    cursor1.execute(sql1)
+                    for r in cursor1:
+                        if r[0] == "1":
+                            print("OK")
+                            try:
+                                cursor1.execute(sql2);
+                                db1.commit()
+                            except:
+                                db1.rollback()                  
+                            sk.send("back".encode("utf-8"))#发送回复
+                        else:
+                            sk.send(senddata)
+                    db1.close()
                 
-            if head == 0x4040:
-                print("in ok")
-                print("machinetype:"+machinetype)
-                print("item:"+item)
-                print("addr:"+addr)
-                print("state:"+state)
-                print("time:"+pub_date)
-                cmd=3
-                senddata=struct.pack("!3H6s6s6s3B"+str(length)+"sHB",head,num,vertion,time,n1,n2,len1,len2,cmd,msg,checksum,end)
-                sk.send(senddata)
-                db = MySQLdb.connect("localhost","root","962424lgj","FireData",charset='utf8')
-                cursor = db.cursor()
-                sql = "INSERT INTO Data (device,item,addr,state,pub_date) VALUES("+"\""+str(machinetype)+"\",\""+str(item)+"\",\""+str(addr)+"\",\""+str(state)+"\",\""+str(pub_date)+"\");"
-                print(sql)
-                try:
-                    print("execute ok")
-                    cursor.execute(sql)
-                    db.commit()
-                except:
-                    db.rollback()
-                db.close()
-                print("close ok")
+                    
+                    if((int(mydata[0])*16+int(mydata[1],16)) != 28):
+                        db = MySQLdb.connect("localhost","root","962424lgj","FireData",charset='utf8')
+                        cursor = db.cursor()
+                        sql = "INSERT INTO Data (device,item,addr,state,pub_date) VALUES("+"\""+str(machinetype)+"\",\""+str(item)+"\",\""+str(addr)+"\",\""+str(state)+"\",\""+str(pub_date)+"\");"
+                        print(sql)
+                        try:
+                            print("execute ok")
+                            cursor.execute(sql)
+                            db.commit()
+                        except:
+                            db.rollback()
+                        db.close()
+                        print("close ok")
                     
         self.request.close()
 
@@ -123,6 +152,8 @@ def ReturnNewState_1(data):#类型1的状态处理
             return "备电故障"
         elif(data&0x0400 == 0x0400):
             return "总线故障"
+        else:
+            return "故障"
     elif(data&0x0008 == 0x0008):
         return "屏蔽"
     elif(data&0x0010 == 0x0010):
@@ -139,6 +170,12 @@ def ReturnNewState_1(data):#类型1的状态处理
         return "配置改变"
     elif(data&0x2000 == 0x2000):
         return "复位"
+    elif(data&0x0100 == 0x0100):
+        return "主电故障"
+    elif(data&0x0200 == 0x0200):
+        return "备电故障"
+    elif(data&0x0400 == 0x0400):
+        return "总线故障"
     else:
         return "未定义"
 
@@ -161,6 +198,10 @@ def ReturnNewState_2(data):
         return "反馈"
     elif(data&0x0080 == 0x0080):
         return "延时"
+    elif(data&0x0800 == 0x0800):
+        return "电源故障"
+    elif(data&0x0004 == 0x0004):
+        return "故障"
     else:
         return "未定义"
     
@@ -407,4 +448,3 @@ def returnmch(data):
 
 if __name__=='__main__':
     socketserver.ThreadingTCPServer(("10.9.7.105",1221),Server).serve_forever()
-
