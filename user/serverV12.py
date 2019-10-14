@@ -91,7 +91,7 @@ class Server(socketserver.BaseRequestHandler):
                     if state=="未定义" and power==1:
                         state="主电恢复"
                         power=0
-                    elif state=="未定义" and power==3:
+                    elif state=="未定义" and power==2:
                         state="备电恢复"
                         power=0
 
