@@ -42,6 +42,18 @@ def check(request):
     db.close()
     return HttpResponse("ok")
 
+def xunjian(request):
+    db = MySQLdb.connect("localhost","root","962424lgj","CHECK",charset='utf8')
+    cursor = db.cursor()
+    sql="update CheckOnline set STATUS=\"2\";"
+    try:
+        cursor.execute(sql)
+        db.commit()
+    except:
+        db.rollback()
+    db.close()
+    return HttpResponse("ok")
+
 def test1(request):
     json_list = [];
     goods = Data1.objects.order_by('-id')

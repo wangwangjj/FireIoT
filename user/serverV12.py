@@ -42,7 +42,7 @@ class Server(socketserver.BaseRequestHandler):
                     #sk.send("back".encode("utf-8"))#发送回复
             #db1.close()
             
-            
+            state=""
             if not data: break
             print("******************************************************************************************************************************************************")
             print('->client:', data.hex())
@@ -135,6 +135,14 @@ class Server(socketserver.BaseRequestHandler):
                             except:
                                 db1.rollback()                  
                             sk.send("back".encode("utf-8"))#发送回复
+                        elif r[0] == '2':
+                            print("xunjian")
+                            try:
+                                cursor1.execute(sql2);
+                                db1.commit()
+                            except:
+                                db1.rollbacl()
+                            sk.send("check".encode("utf-8"))
                         else:
                             sk.send(senddata)
                     db1.close()

@@ -40,8 +40,8 @@
         </tbody>
     </table>
    	
-   <a onclick="myclick()" class="btn btn-info" role="button"><h3>                 查岗巡检</h3></a>
-	
+   <a onclick="myclick()" class="btn btn-info" role="button"><h3>                 查岗</h3></a>
+   <a onclick="xunjian()" class="btn btn-info" role="button"><h3>                 巡检</h3></a>	
 </body>
 <script>
 
@@ -67,6 +67,30 @@
 	httpres.open("GET","/check",true);
     httpres.send();
 }
+////////////////////////////////////////////////
+	function xunjian(){
+    var httpres;
+ 	if(window.XMLHttpRequest)
+	{
+		httpres = new XMLHttpRequest();
+	}
+	else
+	{
+		httpres = new ActiveObject("Microsoft.XMLHTTP");
+	}
+
+  	httpres.onreadystatechange=function()
+	{
+		if(httpres.readyState ==4 && httpres.status==200)
+	{
+		
+	}	
+	}
+		
+	httpres.open("GET","/xunjian",true);
+    httpres.send();
+}
+
 ////////////////////////////////////////////////////
 	$(document).ready(function(){
 		function refresh(){

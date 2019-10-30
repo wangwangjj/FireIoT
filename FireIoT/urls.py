@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include,url
-from app.views import homepage,test,check,test1#,main,refresh,history
+from app.views import homepage,test,check,test1,xunjian#,main,refresh,history
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^test/',test),
     url(r'^check/',check),
     url(r'^test1',test1),
+    url(r'^xunjian',xunjian),
     #url(r'^history',history),
 ]
