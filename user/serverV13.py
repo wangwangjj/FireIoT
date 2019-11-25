@@ -51,6 +51,8 @@ class Server(socketserver.BaseRequestHandler):
                 head,num,vertion,time,n1,n2,len1,len2,cmd=struct.unpack("!3H6s6s6s3B",data[:27])
                 length=len2*256+len1
                 head,num,vertion,time,n1,n2,len1,len2,cmd,msg,checksum,end=struct.unpack("!3H6s6s6s3B"+str(length)+"sHB",data[:(30+length)])
+                sou=n1.hex()
+                print('->sourceaddr: ',sou)
                 mydata=msg.hex()
                 print('->msg:', mydata)
                 machinetype = returnmch((INT(mydata[0])*16+INT(mydata[1])))#获得机器类型
@@ -60,12 +62,14 @@ class Server(socketserver.BaseRequestHandler):
                     item = "本机状态"
                     huilu=""
                     addr = ""
+                    jihao = INT(mydata[6])*16+INT(mydata[7])
                     #addr = INT(mydata[2])*16+mydata[3]
                     state = ReturnNewState_1(calcullate16bit(mydata[8],mydata[9],mydata[10],mydata[11])) 
                     pub_date = ReturnTime(mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19],mydata[20],mydata[21],mydata[22],mydata[23])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 2):#部件状态
                     #item = ReturnNewItem_2(INT(mydata[8])*16+INT(mydata[9]))
                     #state = ReturnNewState_2(calcullate16bit(mydata[18],mydata[19],mydata[20],mydata[21]))
+                    jihao = INT(mydata[6])*16+INT(mydata[7])
                     item = returnitem(mydata[8],mydata[9])
                     state = returnstate(mydata[20],mydata[21])
                     huilu = INT(mydata[10])*4096+INT(mydata[11])*256+INT(mydata[12])*16+INT(mydata[13])  
@@ -76,11 +80,13 @@ class Server(socketserver.BaseRequestHandler):
                     pub_date = ReturnTime(mydata[83],mydata[84],mydata[85],mydata[86],mydata[87],mydata[88],mydata[89],mydata[91],mydata[92],mydata[93],mydata[94],mydata[95])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 4):#操作信息
                     item = "本机操作"
+                    jihao = INT(mydata[6])*16+INT(mydata[7])
                     state = ReturnNewState_4(INT(mydata[8])*16+INT(mydata[9]))
                     huilu=""
                     addr = ""
                     pub_date = ReturnTime(mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19],mydata[20],mydata[21],mydata[22],mydata[23])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 21):#部件状态
+                    jihao = INT(sou[1])*1000+INT(sou[3])*100+INT(sou[5])*10+INT(sou[7])
                     item = "本机状态"
                     state = ReturnNewState_21(INT(mydata[4])*16+INT(mydata[5]))
                     if state=="主电故障":
@@ -100,11 +106,13 @@ class Server(socketserver.BaseRequestHandler):
                     pub_date = ReturnTime(mydata[6],mydata[7],mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 24):#用户信息传输装置操作信息
                     item = "本机操作"
+                    jihao = INT(sou[1])*1000+INT(sou[3])*100+INT(sou[5])*10+INT(sou[7])
                     state = ReturnNewState_24(INT(mydata[4])*16+INT(mydata[5]))
                     addr = ""
                     pub_date = ReturnTime(mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 28):#时间
                     item = "本机"
+                    jihao = INT(sou[1])*1000+INT(sou[3])*100+INT(sou[5])*10+INT(sou[7])
                     state = "时间上传"
                     addr = ""
                     huilu=""
@@ -151,7 +159,7 @@ class Server(socketserver.BaseRequestHandler):
                     if((INT(mydata[0])*16+INT(mydata[1])) != 28):
                         db = MySQLdb.connect("localhost","root","962424lgj","FireData",charset='utf8')
                         cursor = db.cursor()
-                        sql = "INSERT INTO Data (device,item,huilu,addr,state,pub_date) VALUES("+"\""+str(machinetype)+"\",\""+str(item)+"\",\""+str(huilu)+"\",\""+str(addr)+"\",\""+str(state)+"\",\""+str(pub_date)+"\");"
+                        sql = "INSERT INTO Data (device,jihao,item,huilu,addr,state,pub_date) VALUES("+"\""+str(machinetype)+"\",\""+str(jihao)+"\",\""+str(item)+"\",\""+str(huilu)+"\",\""+str(addr)+"\",\""+str(state)+"\",\""+str(pub_date)+"\");"
                         print(sql)
                         try:
                             print("execute ok")

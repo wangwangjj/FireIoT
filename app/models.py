@@ -4,6 +4,7 @@ from django.utils import timezone
 
 class Data(models.Model):
     device = models.TextField(default="未定义")
+    jihao = models.CharField(max_length=200,default=0)
     huilu=models.CharField(max_length=200,default=0)
     addr = models.CharField(max_length=200)
     item = models.TextField()

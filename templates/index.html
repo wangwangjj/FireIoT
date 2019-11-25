@@ -24,19 +24,19 @@
 	</div>
     <table class="table table-hove">
         <thead>
-            <tr id="class1" class="alert alert-warning"><th>序号</th><th>设备</th><th>部件</th><th>回路</th><th>地址</th><th>状态</th><th>时间</th></tr>
+            <tr id="class1" class="alert alert-warning"><th>序号</th><th>设备</th><th>机号</th><th>部件</th><th>回路</th><th>地址</th><th>状态</th><th>时间</th></tr>
         </thead>
         <tbody>
-            <tr class="alert alert-info"><td>1</td><td id="td0_2"></td><td id="td0_3"></td><td id="td0_7"></td><td id="td0_4"></td><td id="td0_5"></td><td id="td0_6"></td></tr>
-            <tr><td>2</td><td id="td1_2"></td><td id="td1_3"></td><td id="td1_7"></td><td id="td1_4"></td><td id="td1_5"></td><td id="td1_6"></td></tr>
-            <tr><td>3</td><td id="td2_2"></td><td id="td2_3"></td><td id="td2_7"></td><td id="td2_4"></td><td id="td2_5"></td><td id="td2_6"></td></tr>
-            <tr><td>4</td><td id="td3_2"></td><td id="td3_3"></td><td id="td3_7"></td><td id="td3_4"></td><td id="td3_5"></td><td id="td3_6"></td></tr>
-            <tr><td>5</td><td id="td4_2"></td><td id="td4_3"></td><td id="td4_7"></td><td id="td4_4"></td><td id="td4_5"></td><td id="td4_6"></td></tr>
-            <tr><td>6</td><td id="td5_2"></td><td id="td5_3"></td><td id="td5_7"></td><td id="td5_4"></td><td id="td5_5"></td><td id="td5_6"></td></tr>
-            <tr><td>7</td><td id="td6_2"></td><td id="td6_3"></td><td id="td6_7"></td><td id="td6_4"></td><td id="td6_5"></td><td id="td6_6"></td></tr>
-            <tr><td>8</td><td id="td7_2"></td><td id="td7_3"></td><td id="td7_7"></td><td id="td7_4"></td><td id="td7_5"></td><td id="td7_6"></td></tr>
-            <tr><td>9</td><td id="td8_2"></td><td id="td8_3"></td><td id="td8_7"></td><td id="td8_4"></td><td id="td8_5"></td><td id="td8_6"></td></tr>
-            <tr><td>10</td><td id="td9_2"></td><td id="td9_3"></td><td id="td9_7"></td><td id="td9_4"></td><td id="td9_5"></td><td id="td9_6"></td></tr>
+            <tr class="alert alert-info"><td>1</td><td id="td0_2"></td><td id="td0_1"></td><td id="td0_3"></td><td id="td0_7"></td><td id="td0_4"></td><td id="td0_5"></td><td id="td0_6"></td></tr>
+            <tr><td>2</td><td id="td1_2"></td><td id="td1_1"></td><td id="td1_3"></td><td id="td1_7"></td><td id="td1_4"></td><td id="td1_5"></td><td id="td1_6"></td></tr>
+            <tr><td>3</td><td id="td2_2"></td><td id="td2_1"></td><td id="td2_3"></td><td id="td2_7"></td><td id="td2_4"></td><td id="td2_5"></td><td id="td2_6"></td></tr>
+            <tr><td>4</td><td id="td3_2"><td id="td3_1"></td></td><td id="td3_3"></td><td id="td3_7"></td><td id="td3_4"></td><td id="td3_5"></td><td id="td3_6"></td></tr>
+            <tr><td>5</td><td id="td4_2"><td id="td4_1"></td></td><td id="td4_3"></td><td id="td4_7"></td><td id="td4_4"></td><td id="td4_5"></td><td id="td4_6"></td></tr>
+            <tr><td>6</td><td id="td5_2"><td id="td5_1"></td></td><td id="td5_3"></td><td id="td5_7"></td><td id="td5_4"></td><td id="td5_5"></td><td id="td5_6"></td></tr>
+            <tr><td>7</td><td id="td6_2"><td id="td6_1"></td></td><td id="td6_3"></td><td id="td6_7"></td><td id="td6_4"></td><td id="td6_5"></td><td id="td6_6"></td></tr>
+            <tr><td>8</td><td id="td7_2"><td id="td7_1"></td></td><td id="td7_3"></td><td id="td7_7"></td><td id="td7_4"></td><td id="td7_5"></td><td id="td7_6"></td></tr>
+            <tr><td>9</td><td id="td8_2"><td id="td8_1"></td></td><td id="td8_3"></td><td id="td8_7"></td><td id="td8_4"></td><td id="td8_5"></td><td id="td8_6"></td></tr>
+            <tr><td>10</td><td id="td9_2"><td id="td9_1"></td></td><td id="td9_3"></td><td id="td9_7"></td><td id="td9_4"></td><td id="td9_5"></td><td id="td9_6"></td></tr>
         </tbody>
     </table>
    	
@@ -113,60 +113,70 @@
 			
 			//console.log(document.getElementById("class1").classname);//="alert alert-danger";
 			document.getElementById("td0_2").innerHTML=obj[0].device;
+            document.getElementById("td0_1").innerHTML=obj[0].jihao;
 			document.getElementById("td0_3").innerHTML=obj[0].item;
 			document.getElementById("td0_7").innerHTML=obj[0].huilu;
 			document.getElementById("td0_4").innerHTML=obj[0].addr;
 			document.getElementById("td0_5").innerHTML=obj[0].state;
 			document.getElementById("td0_6").innerHTML=obj[0].pub_date;
 			document.getElementById("td1_2").innerHTML=obj[1].device;
+            document.getElementById("td1_1").innerHTML=obj[1].jihao;
 			document.getElementById("td1_3").innerHTML=obj[1].item;
 			document.getElementById("td1_7").innerHTML=obj[1].huilu;
 			document.getElementById("td1_4").innerHTML=obj[1].addr;
 			document.getElementById("td1_5").innerHTML=obj[1].state;
 			document.getElementById("td1_6").innerHTML=obj[1].pub_date;
 			document.getElementById("td2_2").innerHTML=obj[2].device;
+            document.getElementById("td2_1").innerHTML=obj[2].jihao;
 			document.getElementById("td2_3").innerHTML=obj[2].item;
 			document.getElementById("td2_7").innerHTML=obj[2].huilu;
 			document.getElementById("td2_4").innerHTML=obj[2].addr;
 			document.getElementById("td2_5").innerHTML=obj[2].state;
 			document.getElementById("td2_6").innerHTML=obj[2].pub_date;
 			document.getElementById("td3_2").innerHTML=obj[3].device;
+            document.getElementById("td3_1").innerHTML=obj[3].jihao;
 			document.getElementById("td3_3").innerHTML=obj[3].item;
 			document.getElementById("td3_7").innerHTML=obj[3].huilu;
 			document.getElementById("td3_4").innerHTML=obj[3].addr;
 			document.getElementById("td3_5").innerHTML=obj[3].state;
 			document.getElementById("td3_6").innerHTML=obj[3].pub_date;
 			document.getElementById("td4_2").innerHTML=obj[4].device;
+            document.getElementById("td4_1").innerHTML=obj[4].jihao;
 			document.getElementById("td4_3").innerHTML=obj[4].item;
 			document.getElementById("td4_7").innerHTML=obj[4].huilu;
 			document.getElementById("td4_4").innerHTML=obj[4].addr;
 			document.getElementById("td4_5").innerHTML=obj[4].state;
 			document.getElementById("td4_6").innerHTML=obj[4].pub_date;
 			document.getElementById("td5_2").innerHTML=obj[5].device;
+            document.getElementById("td5_1").innerHTML=obj[5].jihao;
 			document.getElementById("td5_3").innerHTML=obj[5].item;
 			document.getElementById("td5_7").innerHTML=obj[5].huilu;
 			document.getElementById("td5_4").innerHTML=obj[5].addr;
 			document.getElementById("td5_5").innerHTML=obj[5].state;
 			document.getElementById("td5_6").innerHTML=obj[5].pub_date;
 			document.getElementById("td6_2").innerHTML=obj[6].device;
+            document.getElementById("td6_1").innerHTML=obj[6].jihao;
 			document.getElementById("td6_3").innerHTML=obj[6].item;
 			document.getElementById("td6_7").innerHTML=obj[6].huilu;
 			document.getElementById("td6_4").innerHTML=obj[6].addr;
 			document.getElementById("td6_5").innerHTML=obj[6].state;
 			document.getElementById("td6_6").innerHTML=obj[6].pub_date;
 			document.getElementById("td7_2").innerHTML=obj[7].device;
+            document.getElementById("td7_1").innerHTML=obj[7].jihao;
 			document.getElementById("td7_3").innerHTML=obj[7].item;
 			document.getElementById("td7_7").innerHTML=obj[7].huilu;
 			document.getElementById("td7_4").innerHTML=obj[7].addr;
 			document.getElementById("td7_5").innerHTML=obj[7].state;
 			document.getElementById("td7_6").innerHTML=obj[7].pub_date;
 			document.getElementById("td8_2").innerHTML=obj[8].device;
+            document.getElementById("td8_1").innerHTML=obj[8].jihao;
 			document.getElementById("td8_3").innerHTML=obj[8].item;
 			document.getElementById("td8_7").innerHTML=obj[8].huilu;
 			document.getElementById("td8_4").innerHTML=obj[8].addr;
 			document.getElementById("td8_5").innerHTML=obj[8].state;
 			document.getElementById("td8_6").innerHTML=obj[8].pub_date;
 			document.getElementById("td9_2").innerHTML=obj[9].device;
+            document.getElementById("td9_1").innerHTML=obj[9].jihao;
 			document.getElementById("td9_3").innerHTML=obj[9].item;
 			document.getElementById("td9_7").innerHTML=obj[9].huilu;
 			document.getElementById("td9_4").innerHTML=obj[9].addr;

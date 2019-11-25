@@ -21,6 +21,7 @@ def test(request):
         json_dict={}
         json_dict["id"] = good.id
         json_dict["device"] = good.device
+        json_dict["jihao"] = good.jihao
         json_dict["huilu"] = good.huilu
         json_dict["addr"] = good.addr
         json_dict["item"] = good.item
