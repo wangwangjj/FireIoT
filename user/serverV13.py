@@ -64,7 +64,9 @@ class Server(socketserver.BaseRequestHandler):
                     addr = ""
                     jihao = INT(mydata[6])*16+INT(mydata[7])
                     #addr = INT(mydata[2])*16+mydata[3]
-                    state = ReturnNewState_1(calcullate16bit(mydata[8],mydata[9],mydata[10],mydata[11])) 
+                    state = ReturnNewState_1(calcullate16bit(mydata[9],mydata[8],mydata[11],mydata[10])) 
+                    print(calcullate16bit(mydata[9],mydata[8],mydata[11],mydata[10])) 
+                    print('mystate->',state)
                     pub_date = ReturnTime(mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19],mydata[20],mydata[21],mydata[22],mydata[23])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 2):#部件状态
                     #item = ReturnNewItem_2(INT(mydata[8])*16+INT(mydata[9]))
@@ -77,7 +79,7 @@ class Server(socketserver.BaseRequestHandler):
                     print("huilu->",str(huilu))
                     print("addr->",str(addr))  
                     #addr = calcullate16bit(mydata[10],mydata[11],mydata[12],mydata[13])
-                    pub_date = ReturnTime(mydata[83],mydata[84],mydata[85],mydata[86],mydata[87],mydata[88],mydata[89],mydata[91],mydata[92],mydata[93],mydata[94],mydata[95])
+                    pub_date = ReturnTime(mydata[84],mydata[85],mydata[86],mydata[87],mydata[88],mydata[89],mydata[90],mydata[91],mydata[92],mydata[93],mydata[94],mydata[95])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 4):#操作信息
                     item = "本机操作"
                     jihao = INT(mydata[6])*16+INT(mydata[7])
@@ -86,7 +88,7 @@ class Server(socketserver.BaseRequestHandler):
                     addr = ""
                     pub_date = ReturnTime(mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19],mydata[20],mydata[21],mydata[22],mydata[23])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 21):#部件状态
-                    jihao = INT(sou[1])*1000+INT(sou[3])*100+INT(sou[5])*10+INT(sou[7])
+                    jihao = INT(sou[1])*10000+INT(sou[3])*1000+INT(sou[5])*100+INT(sou[7])*10+INT(sou[9])
                     item = "本机状态"
                     state = ReturnNewState_21(INT(mydata[4])*16+INT(mydata[5]))
                     if state=="主电故障":
@@ -106,13 +108,13 @@ class Server(socketserver.BaseRequestHandler):
                     pub_date = ReturnTime(mydata[6],mydata[7],mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 24):#用户信息传输装置操作信息
                     item = "本机操作"
-                    jihao = INT(sou[1])*1000+INT(sou[3])*100+INT(sou[5])*10+INT(sou[7])
+                    jihao = INT(sou[1])*10000+INT(sou[3])*1000+INT(sou[5])*100+INT(sou[7])*10+INT(sou[9])
                     state = ReturnNewState_24(INT(mydata[4])*16+INT(mydata[5]))
                     addr = ""
                     pub_date = ReturnTime(mydata[8],mydata[9],mydata[10],mydata[11],mydata[12],mydata[13],mydata[14],mydata[15],mydata[16],mydata[17],mydata[18],mydata[19])
                 elif((INT(mydata[0])*16+INT(mydata[1])) == 28):#时间
                     item = "本机"
-                    jihao = INT(sou[1])*1000+INT(sou[3])*100+INT(sou[5])*10+INT(sou[7])
+                    jihao = INT(sou[1])*10000+INT(sou[3])*1000+INT(sou[5])*100+INT(sou[7])*10+INT(sou[9])
                     state = "时间上传"
                     addr = ""
                     huilu=""
@@ -181,14 +183,7 @@ def ReturnNewState_1(data):#类型1的状态处理
     if(data&0x0002 == 0x0002):
         return "火警"
     elif(data&0x0004 == 0x0004):
-        if(data&0x0100 == 0x0100):
-            return "主电故障"
-        elif(data&0x0200 == 0x0200):
-            return "备电故障"
-        elif(data&0x0400 == 0x0400):
-            return "总线故障"
-        else:
-            return "故障"
+        return "故障"
     elif(data&0x0008 == 0x0008):
         return "屏蔽"
     elif(data&0x0010 == 0x0010):
@@ -336,7 +331,7 @@ def ReturnNewState_21(data):#用传状态
     elif(data == 33):
         return "与监控中心通信信道故障"
     elif(data == 65):
-        return "监涮连接线路故障"
+        return "监测连接线路故障"
     else:
         return "未定义"
 
